@@ -4,9 +4,12 @@ import '../App.css'
 export const Loading = function() {
     return (
         <div className="loading-wrapper">
-            <div className="lds-ripple">
-                <div />
-                <div />
+            <div>
+                {/*<img src="../assets/logo.svg" alt="logo"/>*/}
+                <div className="lds-ripple">
+                    <div />
+                    <div />
+                </div>
             </div>
         </div>
     )

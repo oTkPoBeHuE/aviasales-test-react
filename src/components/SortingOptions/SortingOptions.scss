@@ -1,0 +1,74 @@
+@import "../../App";
+
+.checkbox {
+  border: 1px solid $light-blue;
+  box-sizing: border-box;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  margin-right: 10px;
+  overflow: hidden;
+  &--active {
+    border: 1px solid $blue;
+  }
+}
+
+.check-mark {
+  position: relative;
+  top: -15px;
+  opacity: 0.5;
+  transition: .2s;
+  &--active {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  user-select: none;
+  &:hover {
+    cursor: pointer;
+    .label-text {
+      transform: translate(5px);
+    }
+  }
+}
+
+.label-text {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: $black;
+  transition: .3s;
+}
+
+.sorting-options {
+  background: white;
+  box-shadow: $shadow;
+  border-radius: $border-radius;
+  height: 252px;
+  width: 232px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.sorting-options-heading {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $black;
+  margin-bottom: 20px;
+}
