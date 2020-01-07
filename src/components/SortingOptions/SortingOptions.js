@@ -71,13 +71,9 @@ export class SortingOptions extends React.Component {
         const switchCheckbox = index => {
             let checkboxes = this.state.checkboxes;
             const checkboxIndex = this.state.checkboxes.findIndex(checkbox => checkbox.id === index);
-
             let isSelectedAll = false;
 
-            if (checkboxIndex !== 0) {
-                checkboxes[0].isActive = false;
-                checkboxes[checkboxIndex].isActive = !checkboxes[checkboxIndex].isActive;
-            } else {
+            const selectAllCheckbox = () => {
                 isSelectedAll = true;
                 checkboxes = checkboxes.map(checkbox => {
                     return {
@@ -87,6 +83,19 @@ export class SortingOptions extends React.Component {
                         transfers: checkbox.transfers
                     }
                 })
+            };
+
+            if (checkboxIndex !== 0) {
+                checkboxes[0].isActive = false;
+                checkboxes[checkboxIndex].isActive = !checkboxes[checkboxIndex].isActive;
+            } else {
+                selectAllCheckbox();
+            }
+
+            const isSelectedOneCheckbox = checkboxes.find(checkbox => checkbox.isActive);
+
+            if (!isSelectedOneCheckbox) {
+                selectAllCheckbox();
             }
 
             this.setState({checkboxes});
